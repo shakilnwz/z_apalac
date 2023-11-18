@@ -25,38 +25,48 @@ html {
 body {
     margin: 0 auto;
     color: var(--dark-color);
-    font-family: var(--detail-font);
     font-size: 1.5rem;
     max-width: 192rem;
 }
 
+.h-font,
+.place {
+    font-family: var(--header-font);
+}
+
+.detail-font,
+a,
+label,
+button,
+p {
+    font-family: var(--detail-font);
+}
 
 a {
     color: var(--dark-color);
     text-decoration: none;
 }
 
+.flex-center,
+section,
+.solutions,
+.solutions li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .nav {
     padding: 1.2rem;
-    display: flex;
-    align-items: center;
-    height: 9.7rem;
+    min-height: 9.7rem;
     justify-content: space-around;
 }
 
-.nav ul {
-    display: flex;
-    align-items: center;
-}
-
-.nav ul li {
+.nav li {
     font-size: 1.4rem;
     padding: 1rem;
     list-style: none;
-}
-
-.contact {
-    display: flex;
 }
 
 .contact img {
@@ -66,38 +76,35 @@ a {
 .phone {
     display: block;
     color: var(--pop-color);
-    font-family: var(--header-font);
     font-size: 3rem;
     font-weight: 600;
 }
 
+section {
+    padding: 5rem 10%;
+    flex-direction: column;
+}
+
+/* hero section */
 .hero {
-    padding: 0 21rem 0 0;
-    width: 100%;
-    height: 77.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-image: url(./src/grey-marble-column-details-building\ 1.png);
+    min-height: 77.4rem;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.55) 20%, rgba(0, 0, 0, 0) 50%), url(./src/grey-marble-column-details-building\ 1.png);
+    flex-direction: row;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #person {
-    margin: 5.5rem 0 0 0;
+    position: relative;
+    bottom: -5rem;
+    z-index: 0;
 }
 
 .details {
-    padding: 21rem 0 0 21rem;
     color: var(--bg-primary);
-    height: 100%;
-    width: 60%;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.55) 55%, rgba(0, 0, 0, 0));
 }
 
-
-
 h1 {
-
-    font-family: var(--header-font);
     font-size: 7rem;
     font-weight: 400;
 }
@@ -108,34 +115,31 @@ h1 {
 }
 
 .solutions {
-    display: flex;
     padding: 2.5rem 0;
 }
 
 .solutions li {
-    display: flex;
+    justify-content: flex-start;
     padding: 1rem 7rem 1rem 0;
     list-style-type: none;
     font-weight: 600;
     font-size: 2rem;
-
 }
 
 .solutions li img {
     padding-right: 0.5rem;
 }
 
-form {
+.contact-form {
     padding: 3.1rem;
     background-color: var(--bg-primary);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     border-radius: 5px;
+    z-index: 1;
 }
 
-form * {
+.contact-form * {
     display: block;
+    width: 100%;
 }
 
 label {
@@ -192,7 +196,6 @@ button {
     border: none;
     border-radius: 3px;
     font-weight: 600;
-    font-size: 1.5rem;
 }
 
 button a {
@@ -201,13 +204,6 @@ button a {
 
 .send {
     width: 11.9rem;
-}
-
-section {
-    padding: 7rem 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .redinfo {
@@ -220,24 +216,35 @@ section {
     padding: 2rem 3.5rem;
 }
 
+/* about section */
 .about {
     background-color: var(--bg-secondary);
 }
 
 .vid {
     position: relative;
-    width: 72.5rem;
-    height: 41.2rem;
+    max-width: 72.5rem;
+    max-height: 41.2rem;
     margin: 5rem 0;
 }
 
+video {
+    width: 100%;
+}
+
 .controls {
+    width: 15%;
     position: absolute;
     top: 40%;
     left: 43%;
 }
 
+#circle {
+    width: 100%;
+}
+
 #triangle {
+    width: 20%;
     position: absolute;
     top: 31%;
     left: 44%;
@@ -250,7 +257,6 @@ section {
 }
 
 .heading-font {
-    font-family: var(--header-font);
     font-size: 2rem;
 }
 
@@ -259,17 +265,14 @@ section {
 }
 
 h2 {
-    font-family: var(--header-font);
     font-size: 5rem;
     font-weight: 400;
 }
 
 form h3,
 .red {
-    font-family: var(--header-font);
     font-size: 3.1rem;
     text-align: center;
-
 }
 
 .red {
@@ -279,9 +282,7 @@ form h3,
 
 .cell-phone {
     margin: 5rem 0;
-    display: flex;
     font-size: 3.1rem;
-    font-family: var(--header-font);
     color: var(--bg-primary);
     background-color: var(--dark-color);
     padding: 1.7rem 6rem;
@@ -290,27 +291,27 @@ form h3,
 }
 
 .carousel {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
+    gap: 3rem;
 }
 
-
-
 .image {
-    padding: 4rem 2rem 2rem;
+    padding: 4rem 0 2rem 0;
     position: relative;
+
+}
+
+.image>img,
+.post>img {
+    width: 100%;
 }
 
 figcaption {
     background-image: linear-gradient(rgba(0, 0, 0, 0), var(--dark-color));
     text-align: center;
     position: absolute;
-    width: calc(100% - 4rem);
+    width: 100%;
     padding: 25rem 0 4rem;
     bottom: 3.6%;
-    font-family: var(--header-font);
     font-size: 3.4rem;
     color: var(--bg-primary);
 }
@@ -328,6 +329,7 @@ figcaption {
     color: var(--bg-primary);
     background-image: url(./src/IMG.png);
     background-repeat: no-repeat;
+    background-size: cover;
     background-color: var(--dark-color);
 }
 
@@ -358,15 +360,16 @@ figcaption {
 
 .case-eval {
     background-image: url(src/european-style-roman-column-1920x1200\ 2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .post {
-    margin: 5rem 1.4rem;
-    width: 48.6rem;
+    padding: 5rem 0;
+    max-width: 48.6rem;
 }
 
 .posttitle {
-    font-family: var(--header-font);
     font-size: 3.2rem;
     font-weight: 400;
     padding: 2rem 0 1rem;
@@ -392,50 +395,44 @@ figcaption {
     padding-bottom: 0;
 }
 
+.footer * {
+    list-style: none;
+    color: var(--bg-primary);
+    line-height: 2.5rem;
+}
+
+.footer-column {
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-column>div {
+    padding-top: 3rem;
+}
+
 .footer h4,
 .footer img {
-    padding: 0 0 3rem 0;
-    font-family: var(--header-font);
+    padding-bottom: 1rem;
     font-size: 3.1rem;
     font-weight: 400;
 }
 
+.footer li,
+.place,
+.social p {
+    padding: 2rem 4rem 0 0;
+}
+
 .place {
-    font-family: var(--header-font);
     font-size: 2.1rem;
-    padding: 2rem 0 1rem 0;
-}
-
-.footer-column {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    line-height: 2.5rem;
-    padding-bottom: 1rem;
-}
-
-.links div {
-    display: flex;
 }
 
 .footer-about {
-    padding-right: 4rem;
-    width: 27%;
-}
-
-
-
-.footer li {
-    list-style: none;
-    padding: 0 4rem 1rem 0;
-}
-
-.footer li a {
-    color: var(--bg-primary);
+    width: 40rem;
 }
 
 .footer .phone {
-    color: var(--bg-primary);
     padding: 2rem 0 4rem 0;
 }
 
