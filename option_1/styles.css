@@ -69,6 +69,15 @@ section,
     list-style: none;
 }
 
+.nav li:hover {
+    color: var(--bg-primary);
+    background-color: var(--dark-color);
+}
+
+.nav li:hover a {
+    color: var(--bg-primary);
+}
+
 .contact img {
     padding: 0 1rem 1rem 0
 }
@@ -83,6 +92,7 @@ section,
 section {
     padding: 5rem 10%;
     flex-direction: column;
+
 }
 
 /* hero section */
@@ -193,7 +203,7 @@ button {
     background-color: var(--pop-color);
     margin-top: 2rem;
     padding: 1.1rem 1.5rem;
-    border: none;
+    border: 2px solid rgba(0, 0, 0, 0);
     border-radius: 3px;
     font-weight: 600;
 }
@@ -201,6 +211,13 @@ button {
 button a {
     color: var(--bg-primary);
 }
+
+button:hover {
+    border: 2px solid var(--dark-color);
+    opacity: 0.9;
+}
+
+
 
 .send {
     width: 11.9rem;
@@ -267,6 +284,7 @@ video {
 h2 {
     font-size: 5rem;
     font-weight: 400;
+    text-align: center;
 }
 
 form h3,
@@ -297,8 +315,8 @@ form h3,
 .image {
     padding: 4rem 0 2rem 0;
     position: relative;
-
 }
+
 
 .image>img,
 .post>img {
@@ -405,6 +423,7 @@ figcaption {
     width: 100%;
     justify-content: space-between;
     align-items: flex-start;
+    padding-bottom: 3rem;
 }
 
 .footer-column>div {
@@ -441,7 +460,6 @@ figcaption {
 }
 
 .line {
-    margin: 2rem;
     background-color: var(--pop-muted-color);
     width: 100%;
     height: 1px;
@@ -449,24 +467,102 @@ figcaption {
 }
 
 .copyright {
-    padding: 2rem 0 4rem 0;
+    padding: 4rem 0;
     font-size: 1.8rem;
 }
 
-@media only screen and (min-width: 960px) {
-    /* styles for browsers larger than 960px; */
-}
 
-@media only screen and (min-width: 1440px) {
-    /* styles for browsers larger than 1440px; */
-}
-
-@media only screen and (min-width: 2000px) {
-    /* for sumo sized (mac) screens */
-}
 
 @media only screen and (max-device-width: 480px) {
-    /* styles for mobile browsers smaller than 480px; (iPhone) */
+    html {
+        font-size: 55%;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    button {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 3rem 5%;
+        flex-direction: column;
+
+    }
+
+    .nav ul {
+        padding-top: 2rem;
+    }
+
+    .hero {
+        background-image: linear-gradient(140deg, rgba(0, 0, 0, 0.55) 30%, rgba(0, 0, 0, 0) 60%), url(./src/grey-marble-column-details-building\ 1.png);
+    }
+
+    .solutions {
+        justify-content: flex-start;
+        padding-left: 2rem;
+    }
+
+    .awards img {
+        padding: 1rem;
+    }
+
+    .awards div {
+        justify-content: space-between;
+        padding: 3rem;
+    }
+
+    .about h2,
+    .about p {
+        padding: 1rem 4rem;
+    }
+
+    .cell-phone {
+        margin: 2rem 0;
+        padding: 2rem;
+    }
+
+    .image {
+        padding: 2rem 0;
+    }
+
+    .ratings {
+        padding: 3rem 0;
+    }
+
+    .rating {
+        width: 95%;
+        padding: 4rem 4rem 3rem;
+    }
+
+    .post {
+        padding: 3rem 0 0 0;
+    }
+
+    .footer-column {
+        padding-bottom: 0;
+    }
+
+    .footer-column>div {
+        width: 100%;
+        padding: 0 0 4rem 0;
+    }
+
+    .links>div {
+        justify-content: flex-start;
+    }
+
+    .copyright {
+        font-size: 1.5rem;
+        padding: 2rem 0;
+    }
+
 }
 
 @media only screen and (device-width: 768px) {
