@@ -1,0 +1,6 @@
+- [ ] carousel => slider.
+- [ ] menu => popup
+- [ ] form => validation
+- [ ] video => popup
+- [ ] call=> clickable
+- [X] hero image placement => top
