@@ -310,13 +310,34 @@ form h3,
 
 .carousel {
     gap: 3rem;
+    flex-wrap: nowrap;
 }
+
+/* custom class for auto scrolling image carousel*/
+.carousel-auto {
+    overflow-x: hidden;
+    justify-content: flex-start;
+}
+
+.carousel-auto-child {
+    flex: 0 0 auto;
+    width: 50%;
+    animation: scroller 5s infinite;
+}
+
+@keyframes scroller {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
 
 .image {
     padding: 4rem 0 2rem 0;
     position: relative;
-}
 
+}
 
 .image>img,
 .post>img {
@@ -501,7 +522,16 @@ figcaption {
     }
 
     .hero {
-        background-image: linear-gradient(140deg, rgba(0, 0, 0, 0.55) 30%, rgba(0, 0, 0, 0) 60%), url(./src/grey-marble-column-details-building\ 1.png);
+        background-image: linear-gradient(140deg, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0) 80%), url(./src/grey-marble-column-details-building\ 1.png);
+    }
+
+    .details {
+        padding-bottom: 2rem;
+    }
+
+    #person {
+        order: -1;
+        bottom: 2rem;
     }
 
     .solutions {
@@ -565,15 +595,8 @@ figcaption {
 
 }
 
-@media only screen and (device-width: 768px) {
-    /* default iPad screens */
-}
+@media only screen and (device-width: 768px) {}
 
-/* different techniques for iPad screening */
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
-    /* For portrait layouts only */
-}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {}
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
-    /* For landscape layouts only */
-}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {}
