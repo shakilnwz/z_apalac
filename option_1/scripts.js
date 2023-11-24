@@ -22,10 +22,7 @@ hide.addEventListener('mouseup', resetStyle)
 console.log(window.screen.width > 480)
 window.addEventListener('resize', () => {
     if (window.screen.width > 480) {
-        nav.style.width = "0"
-        nav.style.position = "fixed"
-        show.style.width = "7rem"
-        hide.style.width = "0"
+        location.reload()
     }
 
 })
