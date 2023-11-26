@@ -13,13 +13,29 @@
         <header class="nav flex-center">
             <a href="#home"><img id="logo" src="./src/apalac.svg" alt="zapalac logo"></a>
             <ul id="nav-menu" class="detail-font flex-center">
-                <li><a href="#">Practice Areas <img src="./src/red-triangle.svg" class="arrow"></a></li>
-                <li><a href="#">Meet the Team <img src="./src/red-triangle.svg" class="arrow"></a></li>
+                <li class="flex-center"><a href="#">Practice Areas
+                        <img src="./src/red-triangle.svg" class="arrow">
+                    </a>
+                    <ul class="submenu-container">
+                        <li><a href="#">Item 1</a></li>
+                        <li><a href="#">Item 2</a></li>
+                        <li><a href="#">Item 3</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Meet the Team <img src="./src/red-triangle.svg" class="arrow"></a>
+                    <ul class="submenu-container">
+                        <li><a href="#">Item 1</a></li>
+                        <li><a href="#">Item 2</a></li>
+                        <li><a href="#">Item 3</a></li>
+
+                    </ul>
+                </li>
                 <li><a href="#">Reviews</a></li>
                 <li><a href="#">Client Login</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
-                <li class="contact flex-center">
+                <li class="contact flex-center callto">
                     <img src="./src/Vector_4.svg" alt="">
                     <span>Call for a free consultation <span class="phone h-font">(832) 390-2949</span></span>
                 </li>
@@ -35,7 +51,7 @@
                 <span class="bar"></span>
             </button>
         </header>
-        <section class="hero">
+        <section class="hero flex-center">
             <div class="details">
                 <h1>Effective Case With <span class="bold">Great Solutions.</span></h1>
                 <div class="solutions detail-font">
@@ -75,9 +91,11 @@
             </form>
         </section>
         <section class="awards">
+
             <p class="redinfo">Our Achievement</p>
             <h2>Awards and Recognition</h2>
-            <div class="flex-center">
+
+            <div class="autoscroll flex-center">
                 <img src="./src/nbta_round_logo.png" alt="">
                 <img src="./src/award_logo2.png" alt="">
                 <img src="./src/award_logo1.png" alt="">
@@ -86,7 +104,7 @@
                 <img src="./src/award_logo4.png" alt="">
             </div>
         </section>
-        <section class="about">
+        <section class="about flex-center">
             <div class="vid">
                 <video poster="./src/businessman-reading-contract-closeup 1.png">
                     <source src="#" type="video/mp4">
@@ -110,10 +128,10 @@
             <p class="heading-font h-font">
                 We offer cost-effective consults for Landlord/Tenant matters, free Estate Planning and Probate
                 consultations for new clients, and paid consultations for document reviews or other matters. <span
-                    class="redinfo">Call
+                    class="redinfo callto">Call
                     us today at 832-390-2949</span> to set up an appointment!
             </p>
-            <div class="cell-phone">
+            <div class="cell-phone callto">
                 <img src="./src/Vector_4.svg" alt="">
                 <span>Call us today at <span class="red">(832) 390-2949</span></span>
             </div>
@@ -123,23 +141,26 @@
                 Practice Areas
             </p>
             <h2>We Offer A Client Focused Approach</h2>
-            <div class="carousel flex-center">
-                <div class="image">
-                    <img src="./src/director-signing-documents-with-fashion-pen-high-quality-photo (1) 2.png"
-                        alt="signing document">
-                    <figcaption>Estate Planning</figcaption>
-                </div>
-                <div class="image">
-                    <img src="./src/two-cropped-startuppers-developing-business-plan 4.png"
-                        alt="two startupper planning">
-                    <figcaption>Business Planning</figcaption>
-                </div>
-                <div class="image">
-                    <img src="./src/house-investments-elements-composition 2.png" alt="mini house on hand">
-                    <figcaption>Real Estate Law</figcaption>
+            <div class="carousel">
+                <div class="carousel-auto flex-center">
+                    <div class="carousel-auto-child image">
+                        <img src="./src/director-signing-documents-with-fashion-pen-high-quality-photo (1) 2.png"
+                            alt="signing document">
+                        <figcaption>Estate Planning</figcaption>
+                    </div>
+                    <div class="carousel-auto-child  image">
+                        <img src="./src/two-cropped-startuppers-developing-business-plan 4.png"
+                            alt="two startupper planning">
+                        <figcaption>Business Planning</figcaption>
+                    </div>
+                    <div class="carousel-auto-child image">
+                        <img src="./src/house-investments-elements-composition 2.png" alt="mini house on hand">
+                        <figcaption>Real Estate Law</figcaption>
+                    </div>
                 </div>
             </div>
-            <div class="nav-dot carousel flex-center">
+
+            <div class="nav-dot carousel-auto flex-center">
                 <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
@@ -151,7 +172,7 @@
             </p>
             <h2>Caring for our clients and their caseshas been - and always will be - our firm's number one priority.
             </h2>
-            <div class="ratings carousel flex-center">
+            <div class="ratings carousel-auto flex-center">
                 <div class="rating">
                     <h3 class="client">Jessica A.</h3>
                     <div class="stars">
@@ -188,14 +209,18 @@
                 <span class="dot"></span>
             </div>
         </section>
-        <section class="case-eval">
+        <section class="case-eval flex-center">
             <form class="contact-form" action="">
                 <h3>Schedule your free <span class="red">Case Evaluation</span></h3>
-                <div class="form-name">
-                    <label id="fn" for="first-name">First Name*</label>
-                    <input type="text" id="first-name" name="first-name" required>
-                    <label id="ln" for="last-name">Last Name*</label>
-                    <input type="text" id="last-name" name="last-name" required>
+                <div class="form-name flex-center">
+                    <div>
+                        <label id="fn" for="first-name">First Name*</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div>
+                        <label id="ln" for="last-name">Last Name*</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
                 </div>
                 <label for="phone">Phone*</label>
                 <input type="tel" id="phone" name="phone" required>
@@ -206,7 +231,7 @@
                 <button class="send" type="submit">Send</button>
             </form>
         </section>
-        <section class="post-content">
+        <section class="post-content flex-center">
             <h2>
                 Our Latest News Post
             </h2>
@@ -244,7 +269,7 @@
                 </div>
             </div>
         </section>
-        <section class="footer">
+        <section class="footer flex-center">
             <div class="footer-column flex-center">
                 <div class="footer-about">
                     <img src="./src/apalac-2.svg" alt="logo">
@@ -258,11 +283,32 @@
                     <h4>Quick links</h4>
                     <div class="flex-center">
                         <ul class="navlink">
-                            <li><a href="#">Practice Areas <img src="./src/white-triangle.svg" class="arrow"></a></li>
-                            <li><a href="#">Meet the Team <img src="./src/white-triangle.svg" class="arrow"></a></li>
+                            <li><a href="#">Practice Areas <img src="./src/white-triangle.svg" class="arrow"></a>
+                                <ul class="submenu-container">
+                                    <li><a href="#">Item 1</a></li>
+                                    <li><a href="#">Item 2</a></li>
+                                    <li><a href="#">Item 3</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a href="#">Meet the Team <img src="./src/white-triangle.svg" class="arrow"></a>
+                                <ul class="submenu-container">
+                                    <li><a href="#">Item 1</a></li>
+                                    <li><a href="#">Item 2</a></li>
+                                    <li><a href="#">Item 3</a></li>
+
+                                </ul>
+                            </li>
                             <li><a href="#">Reviews</a></li>
                             <li><a href="#">Client Login</a></li>
-                            <li><a href="#">About Us <img src="./src/white-triangle.svg" class="arrow"></a></li>
+                            <li><a href="#">About Us <img src="./src/white-triangle.svg" class="arrow"></a>
+                                <ul class="submenu-container">
+                                    <li><a href="#">Item 1</a></li>
+                                    <li><a href="#">Item 2</a></li>
+                                    <li><a href="#">Item 3</a></li>
+
+                                </ul>
+                            </li>
                         </ul>
                         <ul class="navlink">
                             <li><a href="#">Contact Us</a></li>
@@ -285,7 +331,7 @@
                 <div class="social">
                     <h4>Connect With Us!</h4>
                     <p>Phone Number</p>
-                    <h3 class="phone">(832) 390-2949</h3>
+                    <h3 class="phone callto">(832) 390-2949</h3>
                     <div>
                         <a class="s-links" href="#"><img src="./src/cib_facebook-f.svg" alt="fb"></a>
                         <a class="s-links" href="#"><img src="./src/akar-icons_twitter-fill.svg" alt="twitter"></a>

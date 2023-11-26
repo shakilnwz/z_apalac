@@ -48,7 +48,6 @@ a {
 }
 
 .flex-center,
-section,
 .solutions,
 .solutions li {
     display: flex;
@@ -56,6 +55,7 @@ section,
     align-items: center;
     flex-wrap: wrap;
 }
+
 
 .nav {
     padding: 1.2rem;
@@ -80,6 +80,25 @@ section,
     display: none;
 }
 
+#nav-menu>li {
+    flex-wrap: nowrap;
+}
+
+.submenu-container {
+    padding: 2rem;
+    background-color: var(--bg-secondary);
+    flex-wrap: nowrap;
+    position: absolute;
+    display: none;
+    border-radius: 1rem;
+    top: 7.1rem;
+    z-index: 3;
+}
+
+#nav-menu>li:hover .submenu-container {
+    display: block;
+}
+
 .contact img {
     padding: 0 1rem 1rem 0
 }
@@ -94,7 +113,6 @@ section,
 section {
     padding: 5rem 10%;
     flex-direction: column;
-
 }
 
 /* hero section */
@@ -169,31 +187,10 @@ textarea {
 
 .form-name {
     display: grid;
-    grid-template:
-        'lb1 lb2'
-        'inp1 inp2';
+    grid-template-columns: 1fr 1fr;
     gap: 0 1.5rem;
 }
 
-.form-name * {
-    width: 17rem;
-}
-
-#fn {
-    grid-area: lb1;
-}
-
-#ln {
-    grid-area: lb2;
-}
-
-#first-name {
-    grid-area: inp1;
-}
-
-#last-name {
-    grid-area: inp2;
-}
 
 #case {
     resize: none;
@@ -220,7 +217,6 @@ button:hover {
 }
 
 
-
 .send {
     width: 11.9rem;
 }
@@ -231,8 +227,41 @@ button:hover {
     padding: 1rem;
 }
 
-.awards img {
+section>p,
+section>h2 {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.awards>h2 {
+    padding-bottom: 2rem;
+}
+
+.autoscroll {
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    justify-content: center;
+}
+
+.autoscroll>img {
+    width: 18rem;
     padding: 2rem 3.5rem;
+    flex: 0 0 auto;
+}
+
+.autoscroll-child {
+    width: 15rem;
+    animation: 5s linear 3s infinite running scroller;
+}
+
+@keyframes scroller {
+    from {
+        transform: translateX(-5vw);
+    }
+
+    to {
+        transform: translateX(-110vw);
+    }
 }
 
 /* about section */
@@ -310,6 +339,10 @@ form h3,
     border-bottom: 0.5rem solid var(--pop-color);
 }
 
+.callto {
+    cursor: pointer;
+}
+
 .carousel {
     gap: 3rem;
     flex-wrap: nowrap;
@@ -317,28 +350,30 @@ form h3,
 
 /* custom class for auto scrolling image carousel*/
 .carousel-auto {
-    overflow-x: hidden;
+    overflow-x: scroll;
     justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 3rem;
+    scroll-snap-type: x mandatory;
 }
 
 .carousel-auto-child {
-    flex: 0 0 auto;
+    scroll-snap-align: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
     width: 100%;
-    animation: scroller 5s infinite;
+    /* animation: scroller 5s infinite; */
 }
 
-@keyframes scroller {
-    to {
-        transform: translateX(-100%);
-    }
-}
 
 
 
 .image {
     padding: 4rem 0 2rem 0;
     position: relative;
-
+    min-width: 37.5rem;
+    max-width: 49rem;
 }
 
 .image>img,
@@ -454,7 +489,7 @@ figcaption {
 }
 
 .footer h4,
-.footer img {
+.footer>img {
     padding-bottom: 1rem;
     font-size: 3.1rem;
     font-weight: 400;
@@ -522,7 +557,7 @@ figcaption {
 
     }
 
-    .nav ul {
+    .nav>ul {
         border-radius: 0 0 0 1rem;
         background-color: var(--bg-primary);
         position: fixed;
@@ -532,18 +567,30 @@ figcaption {
         z-index: 2;
         width: 0;
         transition: 0.3s ease-in-out;
-        height: calc(100vh - (5rem + (1.2rem * 2)));
+        padding: 2rem 0;
+        /* align-items: flex-start; */
+        justify-content: flex-start;
+        box-shadow: 10px 3px 13px -4px var(--dark-color);
+    }
 
+    #nav-menu>li {
+        flex-direction: column;
+        /* flex-wrap: nowrap; */
+    }
+
+    .submenu-container {
+        position: relative;
+        top: 0;
     }
 
     .menu {
-        padding: 0 1rem;
-        position: fixed;
+        position: absolute;
         background: none;
         display: block;
         margin: 0;
         transition: 0.3s ease-in-out;
         right: 0;
+        overflow: hidden;
     }
 
     .menu:hover {
@@ -552,10 +599,12 @@ figcaption {
     }
 
     .show {
+        padding: 0.5rem 0.5rem 0.5rem 1.5rem;
         width: 7rem;
     }
 
     .hide {
+        padding: 2rem 0.5rem 2rem 1rem;
         width: 0rem;
     }
 
@@ -581,7 +630,7 @@ figcaption {
 
     .bar {
         display: block;
-        width: 100%;
+        width: 80%;
         background: var(--dark-color);
         padding-top: .5rem;
         margin: .7rem 0;
