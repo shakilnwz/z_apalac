@@ -74,19 +74,20 @@
                 <div class="form-name flex-center">
                     <div>
                         <label id="fn" for="first-name">First Name*</label>
-                        <input type="text" id="first-name" name="first-name" required>
+                        <input data-validator="name" type="text" id="first-name" name="first-name" required>
                     </div>
                     <div>
                         <label id="ln" for="last-name">Last Name*</label>
-                        <input type="text" id="last-name" name="last-name" required>
+                        <input data-validator="name" type="text" id="last-name" name="last-name" required>
                     </div>
                 </div>
                 <label for="phone">Phone*</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input data-validator="phone" type="tel" id="phone" name="phone" required>
                 <label for="email">Email*</label>
-                <input type="email" id="email" name="email" required>
+                <input data-validator="email" type="email" id="email" name="email" required>
                 <label for="case">Please Describe Your Case*</label>
-                <textarea name="case" id="case" cols="30" rows="10" required></textarea>
+                <textarea data-validator="text" name="case" id="case" cols="30" rows="10" required></textarea>
+                <p class="warning">Some text</p>
                 <button class="send" type="submit">Send</button>
             </form>
         </section>
@@ -94,18 +95,28 @@
 
             <p class="redinfo">Our Achievement</p>
             <h2>Awards and Recognition</h2>
-
-            <div class="autoscroll flex-center">
-                <img src="./src/nbta_round_logo.png" alt="">
-                <img src="./src/award_logo2.png" alt="">
-                <img src="./src/award_logo1.png" alt="">
-                <img src="./src/martindale-hubell.png" alt="">
-                <img src="./src/award_logo3.png" alt="">
-                <img src="./src/award_logo4.png" alt="">
+            <div class="autoscroll-parent">
+                <div class="autoscroll flex-center">
+                    <img src="./src/nbta_round_logo.png" alt="">
+                    <img src="./src/award_logo2.png" alt="">
+                    <img src="./src/award_logo1.png" alt="">
+                    <img src="./src/martindale-hubell.png" alt="">
+                    <img src="./src/award_logo3.png" alt="">
+                    <img src="./src/award_logo4.png" alt="">
+                </div>
             </div>
         </section>
         <section class="about flex-center">
             <div class="vid">
+                <div id="vid-popup">
+                    <div class="closebtn">
+                        <span class="crossbar"></span>
+                        <span class="crossbar"></span>
+                    </div>
+                    <video poster="./src/businessman-reading-contract-closeup 1.png">
+                        <source src="#" type="video/mp4">
+                    </video>
+                </div>
                 <video poster="./src/businessman-reading-contract-closeup 1.png">
                     <source src="#" type="video/mp4">
                 </video>
@@ -215,19 +226,20 @@
                 <div class="form-name flex-center">
                     <div>
                         <label id="fn" for="first-name">First Name*</label>
-                        <input type="text" id="first-name" name="first-name" required>
+                        <input data-validator="name" type="text" id="first-name" name="first-name" required>
                     </div>
                     <div>
                         <label id="ln" for="last-name">Last Name*</label>
-                        <input type="text" id="last-name" name="last-name" required>
+                        <input data-validator="name" type="text" id="last-name" name="last-name" required>
                     </div>
                 </div>
                 <label for="phone">Phone*</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input data-validator="phone" type="tel" id="phone" name="phone" required>
                 <label for="email">Email*</label>
-                <input type="email" id="email" name="email" required>
+                <input data-validator="email" type="email" id="email" name="email" required>
                 <label for="case">Please Describe Your Case*</label>
-                <textarea name="case" id="case" cols="30" rows="10" required></textarea>
+                <textarea data-validator="text" name="case" id="case" cols="30" rows="10" required></textarea>
+                <p class="warning">Some text</p>
                 <button class="send" type="submit">Send</button>
             </form>
         </section>
@@ -235,7 +247,7 @@
             <h2>
                 Our Latest News Post
             </h2>
-            <div class="posts carousel flex-center">
+            <div class="posts flex-center">
                 <div class="post">
                     <img src="./src/top-view-career-guidance-items-judges 1.png" alt="judge items">
                     <h3 class="posttitle">Probate in Texas: Common Misconceptions</h3>

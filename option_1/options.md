@@ -1,6 +1,7 @@
 - [ ] carousel => slider.
+- [X] form => validation
+- [X] video => popup
 - [X] menu => popup
-- [ ] form => validation
-- [ ] video => popup
 - [X] call=> clickable
 - [X] hero image placement => top
+- [X] autoscroll of awards
