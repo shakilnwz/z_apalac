@@ -69,7 +69,7 @@
                 <button><a href="#" class="button">Free Consultation</a></button>
             </div>
             <img id="person" src="./src/dfdsfd-removebg-preview 1.png" alt="person smiling">
-            <form class="contact-form" action="">
+            <form id="formA" class="contact-form" action="">
                 <h3>Schedule your free <span class="red">Case Evaluation</span></h3>
                 <div class="form-name flex-center">
                     <div>
@@ -87,7 +87,7 @@
                 <input data-validator="email" type="email" id="email" name="email" required>
                 <label for="case">Please Describe Your Case*</label>
                 <textarea data-validator="text" name="case" id="case" cols="30" rows="10" required></textarea>
-                <p class="warning">Some text</p>
+                <p class="warning"></p>
                 <button class="send" type="submit">Send</button>
             </form>
         </section>
@@ -153,6 +153,7 @@
             </p>
             <h2>We Offer A Client Focused Approach</h2>
             <div class="carousel">
+                <button class="carousel__changer left-item">&lt;</button>
                 <div class="carousel-auto flex-center">
                     <div class="carousel-auto-child image">
                         <img src="./src/director-signing-documents-with-fashion-pen-high-quality-photo (1) 2.png"
@@ -169,10 +170,12 @@
                         <figcaption>Real Estate Law</figcaption>
                     </div>
                 </div>
+                <button class="carousel__changer right-item">&gt;</button>
+
             </div>
 
-            <div class="nav-dot carousel-auto flex-center">
-                <span class="dot"></span>
+            <div class="nav-dot flex-center">
+                <span class="dot active-dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
             </div>
@@ -183,7 +186,7 @@
             </p>
             <h2>Caring for our clients and their caseshas been - and always will be - our firm's number one priority.
             </h2>
-            <div class="ratings carousel-auto flex-center">
+            <div class="ratings flex-center">
                 <div class="rating">
                     <h3 class="client">Jessica A.</h3>
                     <div class="stars">
@@ -221,7 +224,7 @@
             </div>
         </section>
         <section class="case-eval flex-center">
-            <form class="contact-form" action="">
+            <form id="formB" class="contact-form" action="">
                 <h3>Schedule your free <span class="red">Case Evaluation</span></h3>
                 <div class="form-name flex-center">
                     <div>
@@ -239,7 +242,7 @@
                 <input data-validator="email" type="email" id="email" name="email" required>
                 <label for="case">Please Describe Your Case*</label>
                 <textarea data-validator="text" name="case" id="case" cols="30" rows="10" required></textarea>
-                <p class="warning">Some text</p>
+                <p class="warning"></p>
                 <button class="send" type="submit">Send</button>
             </form>
         </section>
