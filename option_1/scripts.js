@@ -3,7 +3,6 @@ const nav = document.querySelector('#nav-menu')
 const show = document.querySelector('.show')
 const hide = document.querySelector('.hide')
 
-
 function applyStyle() {
     nav.style.width = '70%'
     nav.style.position = "absolute"
@@ -22,7 +21,7 @@ show.addEventListener('mouseup', applyStyle)
 hide.addEventListener('mouseup', resetStyle)
 
 window.addEventListener('resize', () => {
-    if (window.screen.width > 480) {
+    if (window.screen.width > 400) {
         location.reload()
     }
 })
@@ -55,22 +54,36 @@ const carouselParent = document.querySelector('.carousel')
 const leftItem = carouselParent.querySelector('.left-item')
 const rightItem = carouselParent.querySelector('.right-item')
 const carouselAuto = carouselParent.querySelector('.carousel-auto')
+let items = carouselParent.querySelectorAll('.carousel-auto-child')
 let carouselChilds = Array.from(carouselAuto.children)
-let width = carouselChilds[0].getBoundingClientRect().width
-console.log(carouselChilds.reduce((x, y) => { return x + y.clientWidth }, 0))
-leftItem.addEventListener('click', function (e) {
-    console.log(e)
-    console.log(carouselAuto.style)
-    carouselAuto.style.transform = `translateX(-${width + 30}px)`
-})
+let totalWidth = carouselChilds.reduce((x, y) => { return x + y.clientWidth }, 0)
+let navDot = document.querySelectorAll('.dot')
 
+if (window.screen.width < 768) {
+    items.forEach(item => item.style.width = `${carouselParent.clientWidth}px`)
+    let width = carouselParent.clientWidth
 
-
-
-
-
-
-
+    function* cycleNums(start, end) {
+        const numbers = Array.from({ length: end - start + 1 }, (_, i) => start + i);
+        let index = 0;
+        while (index <= end) {
+            yield numbers[index];
+            index = (index + 1) % end;
+        }
+    }
+    const counterCycle = cycleNums(0, items.length);
+    function changeSlide(e) {
+        let value = counterCycle.next().value
+        carouselAuto.style.transform = `translateX(-${width * value}px)`
+        navDot.forEach(element => {
+            element.classList.remove('active-dot')
+        });
+        navDot[value].classList.add('active-dot')
+    }
+    setInterval(changeSlide, 4000)
+    leftItem.addEventListener('click', changeSlide)
+    rightItem.addEventListener('click', changeSlide)
+}
 
 //form validation
 const regExps = {
@@ -119,6 +132,8 @@ formA.addEventListener('change', formValidator)
 formA.addEventListener('submit', allValidator)
 formB.addEventListener('change', formValidator)
 formB.addEventListener('submit', allValidator)
+
+
 //video popup
 const videoContainer = document.querySelector('#vid-popup')
 const playPause = document.querySelector('.controls')

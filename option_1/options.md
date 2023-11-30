@@ -1,4 +1,4 @@
-- [ ] carousel => slider.
+- [X] carousel => slider.
 - [X] form => validation
 - [X] video => popup
 - [X] menu => popup
